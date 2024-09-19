@@ -1,0 +1,179 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+}
+
+.navbar {
+  transition: background-color 0.3s ease;
+  padding: 1rem 0;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #fff !important;
+  transition: color 0.3s ease;
+}
+
+.brand:hover {
+  color: #ffd700 !important;
+}
+
+.brandIcon {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+}
+
+.navLink {
+  color: #fff !important;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #ffd700 !important;
+}
+
+.navDropdown > a {
+  color: #fff !important;
+  transition: color 0.3s ease;
+}
+
+.navDropdown:hover > a {
+  color: #ffd700 !important;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.dropdownIcon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.main {
+  padding-top: 80px; /* Adjust based on your navbar height */
+}
+
+.heroBanner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/weather-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.heroBanner h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.heroBanner p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.heroBanner button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .heroBanner {
+    height: 50vh;
+  }
+
+  .heroBanner h1 {
+    font-size: 2.5rem;
+  }
+
+  .heroBanner p {
+    font-size: 1.2rem;
+  }
+}
+
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.cloud1 {
+  composes: cloud;
+  width: 100px;
+  height: 40px;
+  top: 10%;
+  left: -100px; /* Start off-screen */
+  animation: float 30s linear infinite;
+}
+
+.cloud1::before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 10px;
+}
+
+.cloud1::after {
+  width: 70px;
+  height: 70px;
+  top: -35px;
+  right: 10px;
+}
+
+.cloud2 {
+  composes: cloud;
+  width: 120px;
+  height: 48px;
+  top: 30%;
+  right: -120px; /* Start off-screen */
+  animation: floatReverse 25s linear infinite;
+}
+
+.cloud2::before {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: 12px;
+}
+
+.cloud2::after {
+  width: 84px;
+  height: 84px;
+  top: -42px;
+  right: 12px;
+}
+
+@keyframes float {
+  from { transform: translateX(-100px); }
+  to { transform: translateX(calc(100vw + 100px)); }
+}
+
+@keyframes floatReverse {
+  from { transform: translateX(calc(100vw + 120px)); }
+  to { transform: translateX(-120px); }
+}
