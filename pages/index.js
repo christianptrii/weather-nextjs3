@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button, Spinner } from 'react-bootstrap';
 import { WiDaySunny, WiRain, WiCloudy, WiSnow, WiThunderstorm } from 'react-icons/wi';
+import { FaMapMarkerAlt, FaChartLine, FaBell, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import Layout from '../components/Layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from '../styles/globals.module.css';
@@ -71,8 +72,50 @@ export default function Home() {
         </Container>
       </div>
 
-      {/* Existing weather search and display */}
-      <Container className="mb-5">
+      {/* About Section */}
+      <section className={`${styles.aboutSection} py-5`}>
+        <Container>
+          <h2 className="text-center mb-5">Why Choose Our Weather App?</h2>
+          <Row>
+            <Col md={4} className="mb-4">
+              <Card className={`${styles.featureCard} h-100`}>
+                <Card.Body className="d-flex flex-column align-items-center text-center">
+                  <FaMapMarkerAlt className={styles.featureIcon} />
+                  <Card.Title>Global Coverage</Card.Title>
+                  <Card.Text>
+                    Access accurate weather information for any location worldwide, from bustling cities to remote areas.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={4} className="mb-4">
+              <Card className={`${styles.featureCard} h-100`}>
+                <Card.Body className="d-flex flex-column align-items-center text-center">
+                  <FaChartLine className={styles.featureIcon} />
+                  <Card.Title>Detailed Forecasts</Card.Title>
+                  <Card.Text>
+                    Get comprehensive weather data including temperature, humidity, wind speed, and more, all in one place.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={4} className="mb-4">
+              <Card className={`${styles.featureCard} h-100`}>
+                <Card.Body className="d-flex flex-column align-items-center text-center">
+                  <FaBell className={styles.featureIcon} />
+                  <Card.Title>Real-Time Alerts</Card.Title>
+                  <Card.Text>
+                    Stay informed with instant notifications about severe weather conditions and sudden changes.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Weather Search and Display */}
+      <Container className="my-5 py-5">
         <Row className="justify-content-center">
           <Col md={8} lg={6}>
             <Card className="shadow-lg border-0 rounded-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>

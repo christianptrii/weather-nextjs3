@@ -1,0 +1,44 @@
+.articlesContainer {
+    padding-top: 2rem;
+  }
+  
+  .articleCard {
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .articleCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .articleCard img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .searchBar {
+    display: flex;
+    align-items: center;
+    background-color: #f1f3f5;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .searchBar input {
+    border: none;
+    background: transparent;
+    margin-left: 0.5rem;
+    flex-grow: 1;
+  }
+  
+  .searchBar input:focus {
+    outline: none;
+  }
+  
+  .modalImage {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }

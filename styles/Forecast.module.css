@@ -1,0 +1,32 @@
+.forecastContainer {
+    min-height: calc(100vh - 200px); /* Adjust based on your navbar and footer height */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cardContainer {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+  
+  .dayCard {
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 1rem;
+  }
+  
+  .dayCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .dayCard svg {
+    width: 50px;
+    height: 50px;
+    margin: 10px 0;
+  }
